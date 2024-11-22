@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Technical Review of &quot;How to Take Bribes as an Official and Not Get Caught&quot;</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="14689371-a876-80a2-8ed8-daba99fe2425" class="page sans"><header><h1 class="page-title">Technical Review of <strong>&quot;How to Take Bribes as an Official and Not Get Caught&quot;</strong></h1><p class="page-description"></p></header><div class="page-body"><hr id="14689371-a876-80fb-8cfa-d2e66203a6f9"/><h2 id="14689371-a876-80b9-8e37-dbf6b459ecca" class="">1. Structure and Clarity</h2><h3 id="14689371-a876-8020-bb56-c80ae40c305f" class="">Positive Aspects:</h3><p id="14689371-a876-80b5-8938-d6ce9055ee70" class="">The document is clear organized with headings and subheadings corresponding to the phases of &quot;planning&quot;, &quot;design&quot;, and &quot;deployment.”</p><p id="14689371-a876-8079-bbc4-fcf51a21088f" class="">Each section follows a logical flow similar to the principles of technical documentation, so the content is easy to follow.</p><p id="14689371-a876-80a3-ab6f-e8a92ecbd2a7" class="">Using bold text and bullets can improve readability and help distinguish important information.</p><h3 id="14689371-a876-800f-805a-f1695b42d193" class="">Improvements:</h3><p id="14689371-a876-80f7-9644-d7ac11b6167b" class="">The &quot;Artifacts&quot; listed in each section could include examples, explanations or templates for better understanding.</p><div id="14689371-a876-80a4-a2ba-d7adbcf531ac" class="column-list"><div id="14689371-a876-803d-aefc-cc32f6a5898f" style="width:50%" class="column"><figure id="14689371-a876-80a8-82ab-c760014432cd" class="image" style="text-align:left"><a href="image.png"><img style="width:330.8999938964844px" src="image.png"/></a></figure><figure id="14689371-a876-80ca-ae53-d0594b8d2501" class="image"><a href="image%201.png"><img style="width:330.8999938964844px" src="image%201.png"/></a></figure><figure id="14689371-a876-80e0-9570-db7af95fc542" class="image"><a href="image%202.png"><img style="width:330.9875183105469px" src="image%202.png"/></a></figure></div><div id="14689371-a876-8042-863b-ff6cc51baacd" style="width:50%" class="column"><figure id="14689371-a876-8036-b136-f0b6c98c5b65" class="image"><a href="image%203.png"><img style="width:330.9624938964844px" src="image%203.png"/></a></figure><figure id="14689371-a876-80ad-a943-ed1f1f5ca246" class="image"><a href="image%204.png"><img style="width:330.9750061035156px" src="image%204.png"/></a></figure></div></div><hr id="14689371-a876-8088-a699-e5e5978eb914"/><h2 id="14689371-a876-8014-99ed-f3487779cc2d" class="">2. Technical Accuracy</h2><h3 id="14689371-a876-8076-923a-cc18b9fd98ae" class=""><strong>Positive Aspects:</strong></h3><p id="14689371-a876-807e-a717-d1a38586c579" class="">The satirical steps is quite consistent with the general technical documentation and reflects such stages as planning, testing and commissioning.</p><p id="14689371-a876-80a7-8609-c3ce9cdc3d32" class="">References to concepts like &quot;compartmentalized networks&quot; and &quot;risk mitigation&quot; are accurate in a technical sense.</p><h3 id="14689371-a876-804b-b165-d2c6569f6d5e" class=""><strong>Improvements:</strong></h3><p id="14689371-a876-80aa-8e64-cf2944c5ddfa" class="">The part about cryptocurrencies should mention the legal risks. Including a note on recent advancements in anti-money laundering (AML) practices could enhance the section&#x27;s relevance and depth.</p><figure id="14689371-a876-80c5-bffa-c9f524e2c2af" class="image"><a href="image%205.png"><img style="width:707.9750366210938px" src="image%205.png"/></a></figure><p id="14689371-a876-804b-ba30-cb6e0c7f7bda" class="">
+</p><p id="14689371-a876-8082-b1f8-e5ff76b96e5f" class="">The mention of &quot;offshore accounts&quot; is overly generalized; referencing specific challenges like international banking scrutiny would strengthen this point.</p><figure id="14689371-a876-807a-9bc5-d8e499992608" class="image"><a href="image%206.png"><img style="width:707.9375px" src="image%206.png"/></a></figure><hr id="14689371-a876-8020-8c16-e6ca1dbab28d"/><h2 id="14689371-a876-8088-9c1d-eedad66d38b2" class="">3. Completeness of Information</h2><h3 id="14689371-a876-80be-b00e-de2254d1d09d" class=""><strong>Positive Aspects:</strong></h3><p id="14689371-a876-80e8-ae1d-f8b558828531" class="">Each phase is thoroughly detailed with specific, actionable steps accompanied by references to associated artifacts, providing readers with a well-rounded understanding of the process and its key components.</p><h3 id="14689371-a876-80bc-9edd-e33cec3785df" class=""><strong>Improvements:</strong></h3><p id="14689371-a876-8002-a194-c9089f210e29" class="">The &quot;Testing Phase&quot; lacks detailed steps on how one might test laundering processes safely within the satirical narrative. Incorporating hypothetical testing scenarios could add depth.</p><p id="14689371-a876-8059-944b-cbe3d973b5d6" class="">The &quot;Maintenance Phase&quot; could include examples of crises and how to resolve them, enhancing completeness.</p><hr id="14689371-a876-800c-bfed-d0bd7dc7ac11"/><h2 id="14689371-a876-8056-91db-f2dd2d03cecb" class="">4. Consistency and Terminology</h2><h3 id="14689371-a876-801d-8ee4-fc48c60586b2" class=""><strong>Positive Aspects:</strong></h3><p id="14689371-a876-80ec-afe0-f1c19f68e3e1" class="">The document consistently uses formal terminology, like &quot;risk analysis&quot; and &quot;financial structuring&quot;, that aligns with its satirical technical style.</p><p id="14689371-a876-80a0-99d1-ce18d093cdef" class="">Artifacts are included in every section, ensuring consistency in the overall format.</p><h3 id="14689371-a876-80a6-838d-fe7b6da5721f" class=""><strong>Improvements:</strong></h3><p id="14689371-a876-8077-b52b-d0edb7a738e6" class="">The terminology could include cross-references or a glossary for terms like &quot;coded communication&quot;, &quot;communication protocols&quot;  or &quot;compartmentalized networks&quot; to ensure accessibility for non-technical readers.</p><figure id="14689371-a876-808a-a155-f7f159492a0c" class="image" style="text-align:left"><a href="image%207.png"><img style="width:578px" src="image%207.png"/></a></figure><hr id="14689371-a876-8044-ac70-db652c5fb8ff"/><h2 id="14689371-a876-807a-a04b-ee23b32b3f8a" class="">5. Efficiency</h2><h3 id="14689371-a876-80f9-94ff-c41bf7e89367" class=""><strong>Positive Aspects:</strong></h3><p id="14689371-a876-801c-b734-ca3c22d47d7b" class="">Each section is concise, ensuring that readers can quickly grasp the hypothetical steps.</p><p id="14689371-a876-80f5-b343-e2ff1e9185ce" class="">The satirical approach improves efficiency by mimicking the structure and style of technical documentation, making the narrative both engaging and well-suited to conveying its intended message.</p><hr id="14689371-a876-8045-ad7f-d23d4493ab3b"/><h2 id="14689371-a876-8023-939a-fa6a89974d78" class="">6. Usability and User-Friendliness</h2><h3 id="14689371-a876-80b6-b994-f924cb814cb2" class=""><strong>Positive Aspects:</strong></h3><p id="14689371-a876-8035-9c99-c82f698963ba" class="">The layout with clear sections and concise steps improves usability, making the content accessible for its intended satirical audience.</p><p id="14689371-a876-8011-aa47-c31787c8da9a" class="">The use of artifacts, while abstract, makes the content more engaging by encouraging readers to think about how they could be used in practice.</p><h3 id="14689371-a876-8086-a434-c920f4de7619" class=""><strong>Improvements:</strong></h3><p id="14689371-a876-80a3-8a33-e36357cbb304" class="">Including visual elements like diagrams or mock templates for &quot;network mapping&quot; or &quot;risk analysis&quot; would improve engagement and clarity.</p><hr id="14689371-a876-800f-afda-e5c2ee4b0bd2"/><h2 id="14689371-a876-80fd-b6bf-d4bba4fe3dad" class="">7. Error Handling and Troubleshooting</h2><h3 id="14689371-a876-8056-b861-e79db5c3e13f" class=""><strong>Improvements:</strong></h3><p id="14689371-a876-80f4-8cb5-c533da8ba73d" class="">The document could use a dedicated section to address issues in hypothetical transactions. Adding a troubleshooting guide (e.g. &quot;What to do if the middleman is compromised&quot;) would improve the narrative.</p><hr id="14689371-a876-80be-8ab1-c66270fd10b3"/><h2 id="14689371-a876-80a0-94ca-def6cff1048c" class="">Conclusion</h2><p id="14689371-a876-803d-87b4-e6db3f2b95f6" class="">The document, <strong>&quot;How to Take Bribes as an Official and Not Get Caught,&quot;</strong> effectively uses satire and technical documentation principles to provoke critical thinking about corruption and governance. The structure and clarity make it accessible, while the satirical approach ensures engagement. However, the inclusion of visual aids, detailed testing scenarios, and a glossary could further enhance its effectiveness.</p><p id="14689371-a876-80e5-a425-caecae7412a5" class="">With minor changes, this document can serve as a more robust tool to explain the complexity of corruption in a satirical but thought-provoking way.</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
